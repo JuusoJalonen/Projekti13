@@ -8,14 +8,36 @@ body {
 header {
     background-color: #deb887;
     color: white;
+    position: relative;
+    padding: 10px 0;
+}
+
+header::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#logo {
+    float: left;
+    margin-left: 10px;
+    height: 80px;
+    width: auto;
+}
+
+#navbar {
+    margin: 0;
+    float: left;
+    height: 5px;
+    width: calc(100% - 100px);
 }
 
 #navbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #deb887;
+    height: 100%;
+    line-height: 80px;
 }
 
 #navbar li {
@@ -26,8 +48,9 @@ header {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 0 16px;
     text-decoration: none;
+	margin-top: -79px;
 }
 
 #navbar li a:hover {
@@ -46,4 +69,17 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    #logo {
+        height: 60px;
+    }
+    #navbar {
+        height: 60px;
+        width: calc(100% - 80px);
+    }
+    #navbar ul {
+        line-height: 60px;
+    }
 }
