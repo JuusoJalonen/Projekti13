@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Töihin Leipomoon? - Lähetä Hakemuksesi</title>
+    <title>Töihin Herkkugalleriaan? - Lähetä Hakemuksesi</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,18 +19,40 @@
                 <li><a href="palaute.html">Palaute</a></li>
                 <li><a href="toihin.html">Töihin?</a></li>
             </ul>
+			<a href="toihin_en.html" id="switch-lang">Switch to English</a>
         </nav>
     </header>
 
     <main>
         <section id="toihin">
-            <h1>Töihin?</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h1>Töihin Herkkugalleriaan</h1>
+            <p>Oletko intohimoisen kiinnostunut leipomisesta ja asiakaspalvelusta? Herkkugalleria etsii aina uusia kykyjä tiimiimme. Lähetä hakemuksesi alla olevalla lomakkeella. Liitä CV hakemuksen loppuun.</p>
+			<form class="contact-form" action="submit_toihin.php" method="post">
+				<input type="text" name="name" placeholder="Nimi" required>
+				<input type="email" name="email" placeholder="Sähköposti" required>
+				<input type="text" name="phone" placeholder="Puhelinnumero" required>
+				<input type="file" name="cv" required>
+				<button type="submit" class="submit-button">Lähetä</button>
+			</form>
+
         </section>
     </main>
 
     <footer>
         <p>© Leipomo 2024</p>
     </footer>
+	
+	<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		document.querySelectorAll('.contact-form').forEach(form => {
+			form.onsubmit = function(e) {
+				e.preventDefault();
+				alert("Hakemuksesi lähetettiin onnistuneesti!");
+				form.reset();
+			};
+		});
+	});
+	</script>
+
 </body>
 </html>
