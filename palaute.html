@@ -19,18 +19,40 @@
                 <li><a href="palaute.html">Palaute</a></li>
                 <li><a href="toihin.html">Töihin?</a></li>
             </ul>
+			<a href="palaute_en.html" id="switch-lang">Switch to English</a>
         </nav>
     </header>
 
     <main>
         <section id="palaute">
             <h1>Palaute</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Kerro meille Herkkugallerian kokemuksistasi! Rakennamme palveluitamme palautteesi perusteella.</p>
+			<form class="contact-form" action="submit_palaute.php" method="post">
+				<input type="text" name="name" placeholder="Nimesi" required>
+				<textarea name="feedback" placeholder="Palautteesi" required></textarea>
+				<button type="submit" class="submit-button">Lähetä</button>
+			</form>
+
         </section>
     </main>
 
     <footer>
         <p>© Leipomo 2024</p>
     </footer>
+	
+	<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		document.querySelectorAll('.contact-form').forEach(form => {
+			form.onsubmit = function(e) {
+				e.preventDefault();
+				alert("Kiitos palautteestasi!");
+				form.reset();
+			};
+		});
+	});
+	
+</script>
+
+	
 </body>
 </html>
