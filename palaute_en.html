@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Tell Us About Your Experience at Our Bakery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+		<img src="kuvat\logo.png" alt="Website Logo" style="max-width: 100px; height: auto; display: block; margin: 0 auto;">
+        <nav id="navbar">
+            <ul>
+                <li><a href="index_en.html">Homepage</a></li>
+                <li><a href="menu_en.html">Menu</a></li>
+                <li><a href="tuotteet_en.html">Products</a></li>
+                <li><a href="yhteystiedot_en.html">Contact</a></li>
+                <li><a href="palveluajat_en.html">Opening Hours</a></li>
+                <li><a href="palaute_en.html">Feedback</a></li>
+                <li><a href="toihin_en.html">Jobs?</a></li>
+            </ul>
+			<a href="palaute.html" id="switch-lang">Vaihda suomeksi</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="feedback">
+            <h1>Feedback</h1>
+            <p>Tell us about your experiences at Herkkugalleria! We build our services based on your feedback.</p>
+			<form class="contact-form" action="submit_feedback.php" method="post">
+				<input type="text" name="name" placeholder="Your Name" required>
+				<textarea name="feedback" placeholder="Your Feedback" required></textarea>
+				<button type="submit" class="submit-button">Send</button>
+			</form>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© Herkkugalleria 2024</p>
+    </footer>
+	
+	<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		document.querySelectorAll('.contact-form').forEach(form => {
+			form.onsubmit = function(e) {
+				e.preventDefault();
+				alert("Thank you for your feedback!");
+				form.reset();
+			};
+		});
+	});
+	
+</script>
+	
+</body>
+</html>

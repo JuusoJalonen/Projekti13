@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply to Herkkugalleria? - Submit Your Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+		<img src="kuvat\logo.png" alt="Website Logo" style="max-width: 100px; height: auto; display: block; margin: 0 auto;">
+        <nav id="navbar">
+            <ul>
+                <li><a href="index_en.html">Homepage</a></li>
+                <li><a href="menu_en.html">Menu</a></li>
+                <li><a href="tuotteet_en.html">Products</a></li>
+                <li><a href="yhteystiedot_en.html">Contact</a></li>
+                <li><a href="palveluajat_en.html">Opening Hours</a></li>
+                <li><a href="palaute_en.html">Feedback</a></li>
+                <li><a href="toihin_en.html">Jobs?</a></li>
+            </ul>
+			<a href="toihin.html" id="switch-lang">Vaihda suomeksi</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="apply">
+            <h1>Apply to Herkkugalleria</h1>
+            <p>Are you passionate about baking and customer service? Herkkugalleria is always looking for new talents to join our team. Submit your application using the form below. Please attach your CV to the application.</p>
+			<form class="contact-form" action="submit_application.php" method="post">
+				<input type="text" name="name" placeholder="Name" required>
+				<input type="email" name="email" placeholder="Email" required>
+				<input type="text" name="phone" placeholder="Phone number" required>
+				<input type="file" name="cv" required>
+				<button type="submit" class="submit-button">Submit</button>
+			</form>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© Herkkugalleria 2024</p>
+    </footer>
+	
+	<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		document.querySelectorAll('.contact-form').forEach(form => {
+			form.onsubmit = function(e) {
+				e.preventDefault();
+				alert("Your application has been submitted successfully!");
+				form.reset();
+			};
+		});
+	});
+	</script>
+
+</body>
+</html>

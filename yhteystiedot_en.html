@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Herkkugalleria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="kuvat/logo.png" alt="Herkkugalleria's logo" style="max-width: 100px; height: auto; display: block; margin: 0 auto;">
+        <nav id="navbar">
+            <ul>
+                <li><a href="index_en.html">Homepage</a></li>
+                <li><a href="menu_en.html">Menu</a></li>
+                <li><a href="tuotteet_en.html">Products</a></li>
+                <li><a href="yhteystiedot_en.html">Contact</a></li>
+                <li><a href="palveluajat_en.html">Opening Hours</a></li>
+                <li><a href="palaute_en.html">Feedback</a></li>
+                <li><a href="toihin_en.html">Jobs?</a></li>
+            </ul>
+			<a href="yhteystiedot.html" id="switch-lang">Vaihda suomeksi</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact">
+            <h1>Get in Touch!</h1>
+            <p>Contact us – leave a message through the form below, and we'll get back to you!</p>
+			<form class="contact-form" action="submit_application.php" method="post">
+				<input type="text" name="name" placeholder="Name" required>
+				<input type="email" name="email" placeholder="Email" required>
+				<input type="text" name="topic" placeholder="Subject" required>
+				<input type="text" name="message" placeholder="Message" required>
+				<button type="submit" class="submit-button">Send</button>
+			</form>
+        </section>
+		
+		<section id="contact-info">
+			<h2>Contact Information</h2>
+			<p>Address: Satamakatu 15, 00160 Helsinki</p>
+			<p>Phone: +358 40 123 4567</p>
+			<p>Email: info@herkkugalleria.fi</p>
+		</section>
+    </main>
+
+    <footer>
+        <p>© Herkkugalleria 2024</p>
+    </footer>
+	
+	<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		document.querySelectorAll('.contact-form').forEach(form => {
+			form.onsubmit = function(e) {
+				e.preventDefault();
+				alert("Your contact request was submitted successfully!");
+				form.reset();
+			};
+		});
+	});
+</script>
+
+	
+</body>
+</html>
